@@ -1,0 +1,10 @@
+{
+    "id": "dropdown-screen",
+    "name": "下拉筛选",
+    "version": "2.0.1",
+    "description": "下拉筛选",
+    "keywords": [
+        "下拉",
+        "筛选"
+    ]
+}

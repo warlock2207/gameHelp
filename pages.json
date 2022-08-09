@@ -1,0 +1,74 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+            "path" : "pages/tarbar/index/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+            
+        }
+        ,{
+            "path" : "pages/tarbar/find/find",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "发现游戏",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tarbar/mycenter/mycenter",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "个人中心",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+		      "path": "pages/tarbar/search/search",
+			  "style" :
+			  {
+			      "navigationBarTitleText": "switch",
+			  	"navigationBarTextStyle": "black",
+			  	"navigationBarBackgroundColor": "#ffffff",
+			      "enablePullDownRefresh": false
+			  }
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#999",
+		"selectedColor": "#d81e06",
+		"borderStyle": "#ffffff",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/tarbar/index/index",
+			"text": "折扣",
+			"iconPath": "./static/icon/child.png",
+			"selectedIconPath": "./static/icon/childred.png"
+		}, {
+			"pagePath": "pages/tarbar/find/find",
+			"text": "发现",
+			"iconPath": "./static/icon/marks.png",
+			"selectedIconPath": "static/icon/marksred.png"
+		}, {
+			"pagePath": "pages/tarbar/mycenter/mycenter",
+			"text": "我的",
+			"iconPath": "./static/icon/child2.png",
+			"selectedIconPath": "static/icon/child2red.png"
+		}]
+	},
+	"uniIdRouter": {}
+}
