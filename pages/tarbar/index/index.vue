@@ -1,103 +1,136 @@
 <template>
-		<view class="box-bg" >
-			<uni-nav-bar>
-				<view class="input-view">
-					<uni-icons class="input-uni-icon" type="search" size="18" color="#999" />
-					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="搜索游戏"
-						@click="search" />
-				</view>
-			</uni-nav-bar>
-			<v-tabs v-model="current" :tabs="tabs" @change="changeTab" activeColor="#ffffff" pills=true pillsColor="#d81e06"
-			 pillsBorderRadius="50rpx"></v-tabs>
-			<sl-filter :themeColor="themeColor" :menuList="menuList" @result="result"></sl-filter>
-		</view>
+	<view class="box-bg">
+		<uni-nav-bar>
+			<view class="input-view">
+				<uni-icons class="input-uni-icon" type="search" size="18" color="#999" />
+				<input confirm-type="search" class="nav-bar-input" type="text" placeholder="搜索游戏" @click="search" />
+			</view>
+		</uni-nav-bar>
+		<v-tabs v-model="current" :tabs="tabs" @change="changeTab" activeColor="#ffffff" pills=true pillsColor="#d81e06"
+			pillsBorderRadius="50rpx"></v-tabs>
+		<special-banner :banner-list="bannerList" :swiper-config="swiperConfig"></special-banner>
+		<sl-filter :themeColor="themeColor" :menuList="menuList" @result="result"></sl-filter>
+	</view>
 </template>
-<script >
+<script>
 	import slFilter from '@/components/songlazy-sl-filter/sl-filter/sl-filter.vue';
+	import specialBanner from '@/components/EtherealWheat-banner/specialBanner.vue';
 	export default {
 		data() {
 			return {
-				 current: 0,
-				 tabs: ['热门游戏', '最新折扣', '即将过期', '折扣力度', '最佳口碑'],
-				 themeColor: '#000000',
-				 filterResult: '',
-				 menuList: [
-					 {
-					 	'title': '任意折扣',
-					 	'key': 'sort',
-					 	'isSort': true,
-					 	'detailList': [{
-					 			'title': '任意折扣',
-					 			'value': ''
-					 		},
-					 		{
-					 			'title': '任意史低',
-					 			'value': 'add_time'
-					 		},
-					 		{
-					 			'title': '历史新低',
-					 			'value': 'wages_up'
-					 		}
-					 	]
-					 },{
-						 'title': '中文',
-						 'detailList': [{'title': '中文',
-					 			'value': 'add_time'}]
-					 },
-					 {
-				 						'title': '筛选',
-				 						'detailTitle': '请选择职位类型（可多选）',
-				 						'isMutiple': true,
-				 						'key': 'jobType',
-				 						'detailList': [{
-				 								'title': '不限',
-				 								'value': ''
-				 							},
-				 							{
-				 								'title': '独占',
-				 								'value': 'uni-app'
-				 							},
-				 							{
-				 								'title': '港区',
-				 								'value': 'java'
-				 							},
-				 							{
-				 								'title': '日区',
-				 								'value': 'web'
-				 							},
-				 							{
-				 								'title': '角色扮演',
-				 								'value': 'Android'
-				 							}
-				 						]
-				 					}
-				 				]
-				 			  	
-								
+				current: 0,
+				tabs: ['热门游戏', '最新折扣', '即将过期', '折扣力度', '最佳口碑'],
+				themeColor: '#000000',
+				filterResult: '',
+				menuList: [{
+						'title': '任意折扣',
+						'key': 'sort',
+						'isSort': true,
+						'detailList': [{
+								'title': '任意折扣',
+								'value': ''
+							},
+							{
+								'title': '任意史低',
+								'value': 'add_time'
+							},
+							{
+								'title': '历史新低',
+								'value': 'wages_up'
+							}
+						]
+					}, {
+						'title': '中文',
+						'detailList': [{
+							'title': '中文',
+							'value': 'add_time'
+						}]
+					},
+					{
+						'title': '筛选',
+						'detailTitle': '请选择职位类型（可多选）',
+						'isMutiple': true,
+						'key': 'jobType',
+						'detailList': [{
+								'title': '不限',
+								'value': ''
+							},
+							{
+								'title': '独占',
+								'value': 'uni-app'
+							},
+							{
+								'title': '港区',
+								'value': 'java'
+							},
+							{
+								'title': '日区',
+								'value': 'web'
+							},
+							{
+								'title': '角色扮演',
+								'value': 'Android'
+							}
+						]
+					}
+				],
+				bannerList: [{
+					picture: 'http://mms0.baidu.com/it/u=2284267172,355355407&fm=253&app=138&f=PNG?w=616&h=384',
+					title: '塞尔达传说',
+					description: '塞尔达塞尔达塞尔达塞尔达',
+					path: ''
+				}, {
+					picture: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.gamersky.com%2Fupimg%2Fpic%2F2021%2F02%2F18%2Fsmall_202102180606184538.jpg&refer=http%3A%2F%2Fimg1.gamersky.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662701915&t=dbdc33cd9ae11d5fe011b40bf68dfe0c',
+					title: '异度之刃2',
+					description: '花中樱，鱼乃鲷花中樱，鱼乃鲷',
+					path: ''
+				}, {
+					picture: 'https://img0.baidu.com/it/u=4084545642,29127534&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+					title: '怪物猎人RISE',
+					description: '一起狩猎吧',
+					path: ''
+				}, {
+					picture: 'https://img1.baidu.com/it/u=4025108024,502327549&fm=253&fmt=auto&app=138&f=JPEG?w=825&h=500',
+					title: '女神异闻录5',
+					description: 'P5，天下第一',
+					path: ''
+				}],
+				swiperConfig: {
+					indicatorDots: true,
+					indicatorColor: 'rgba(255, 255, 255, .4)',
+					indicatorActiveColor: 'rgba(255, 255, 255, 1)',
+					autoplay: false,
+					interval: 3000,
+					duration: 300,
+					circular: true,
+					previousMargin: '58rpx',
+					nextMargin: '58rpx'
 				}
+			}
 		},
 		components: {
-		   slFilter
+			slFilter,
+			specialBanner
 		},
 		methods: {
-			search(){
+			search() {
 				uni.redirectTo({
-                    url:"/pages/tarbar/search/search"
-                })
+					url: "/pages/tarbar/search/search"
+				})
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
-$nav-height: 30px;
+	$nav-height: 30px;
 
 	.box-bg {
 		background-color: #F5F5F5;
 		padding: 5px 0;
 	}
 
-	
+
 
 	.input-view {
 		/* #ifndef APP-PLUS-NVUE */
