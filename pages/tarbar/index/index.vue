@@ -6,15 +6,30 @@
 				<input confirm-type="search" class="nav-bar-input" type="text" placeholder="搜索游戏" @click="search" />
 			</view>
 		</uni-nav-bar>
+	
 		<v-tabs v-model="current" :tabs="tabs" @change="changeTab" activeColor="#ffffff" pills=true pillsColor="#d81e06"
 			pillsBorderRadius="50rpx"></v-tabs>
 		<special-banner :banner-list="bannerList" :swiper-config="swiperConfig"></special-banner>
 		<sl-filter :themeColor="themeColor" :menuList="menuList" @result="result"></sl-filter>
-	</view>
+				<view class="uni-list" style="margin-bottom: 32upx;">
+					<block v-for="(item, index) in data" :key="index">
+		                <list-good :data="item" :index="index" @click="_clickListGood" @change="_changeListGood">
+		                   <!-- <view style="color: #007AFF;font-size: 20upx;">
+		                    	其他内容({{data.size}})
+		                    </view> -->
+		                    <template slot="numbox">
+		                    	{{data.size==-1?'到货提醒':data.size==-2?'抢购':data.size==-3?'停止销售':''}}
+		                    </template>
+		                </list-good>
+		            </block>
+				</view>
+		</view>
+	
 </template>
 <script>
 	import slFilter from '@/components/songlazy-sl-filter/sl-filter/sl-filter.vue';
 	import specialBanner from '@/components/EtherealWheat-banner/specialBanner.vue';
+	import listGood from '@/components/wlp-list-good/wlp-list-good.vue';
 	export default {
 		data() {
 			return {
@@ -105,12 +120,41 @@
 					circular: true,
 					previousMargin: '58rpx',
 					nextMargin: '58rpx'
-				}
+				},
+				data: [
+				                    {
+				                        title: '三位一体1',
+				                        titleSub: '冒险/动作/益智',
+				                        imgUrl: '/static/temp/1.png',
+				                        sku: [{name:'史低'},{name:'中文'}],
+				                        label: '折扣',
+				                        price: '9.9',
+				                        originalPrice: '45',
+				                        size: 3
+				                    },
+				                    {
+				                        title: '三位一体2',
+				                        titleSub: '冒险/动作/益智',
+				                        imgUrl: '/static/temp/1.png',
+				                        sku: [{name:'史低'},{name:'中文'}],
+				                        label: '折扣',
+				                        price: '9.9',
+				                        originalPrice: '45',
+				                        size: 1
+				                    },
+				                    {
+				                        title: '三位一体3',
+				                        titleSub: '冒险/动作/益智',
+				                        imgUrl: '/static/temp/1.png',
+				                        price: '9.9'
+				                    }
+				                ]
 			}
 		},
 		components: {
 			slFilter,
-			specialBanner
+			specialBanner,
+			listGood
 		},
 		methods: {
 			search() {
@@ -162,4 +206,13 @@
 		font-size: 12px;
 		background-color: #f8f8f8;
 	}
+	  .pageList__row--wrap{
+	        display: flex;
+	        flex-wrap: wrap;
+	        padding: 8upx;
+	    }
+	    
+	    .uni-form-item .title {
+	    	padding: 20upx 0;
+	    }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="banner-container">
-    <swiper :style="{width: '100vw', height: '260rpx'}" 
+    <swiper :style="{width: '100vw', height: '270rpx'}" 
       :indicator-dots="swiperConfig.indicatorDots" 
       :indicator-color="swiperConfig.indicatorColor" 
       :indicator-active-color="swiperConfig.indicatorActiveColor"
