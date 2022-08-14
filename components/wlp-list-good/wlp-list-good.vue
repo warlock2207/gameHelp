@@ -21,23 +21,28 @@
                 <text v-if="data.originalPrice" class="listGood__price--original">{{ data.originalPrice }}</text>
             </view>
             <view class="listGoodNumbox" :style="{ 'padding-bottom': type == 'column' ? '0' : '8px' }" v-if="inputValue != null">
-                <template v-if="(data.sku != null && data.sku.length > 1) || inputValue == 0">
-                    <view class="listGoodNumbox__empty" @tap="_calcValue('add')">
+                <template v-if="inputValue != 0">
+                    <view class="listGoodNumbox__empty">
                         <uni-icon size="20" type="plusempty" color="#fff"></uni-icon>
-                        购物车
-                        <uni-badge v-if="inputValue > 0" :text="inputValue" type="error">
-                        	{{inputValue}}
-                        </uni-badge>
+						<text style="font-size: 10rpx;">
+							-70%
+						</text>
+                        <text style="font-size: 2rpx;">
+						剩余{{inputValue}}天
+                        </text>
+                       <!-- <uni-badge v-if="inputValue > 0" :text="inputValue" type="error">
+                        	
+                        </uni-badge> -->
                     </view>
                 </template>
-                <template v-else-if="inputValue > 0">
+                <!-- <template v-else-if="inputValue > 0">
                     <view class="listGoodNumbox__minus" @click="_calcValue('subtract')">-</view>
                     <input class="listGoodNumbox__value" type="number" :disabled="disabled" :value="inputValue" @blur="_onBlur" />
                     <view class="listGoodNumbox__plus" :class="{ listGoodNumbox__disabled: disableAdd }" @click="_calcValue('add')">+</view>
                 </template>
                 <template v-else>
                     <view class="listGoodNumbox__helper" :class="{ 'listGoodNumbox__helper--error': inputValue < -1 }" @tap="_click('numbox')"><slot name="numbox"></slot></view>
-                </template>
+                </template> -->
             </view>
         </view>
     </view>
@@ -348,7 +353,7 @@ export default {
             padding: 0 20upx 0 8upx;
             font-size: 24upx;
             color: #fff;
-            background-color: $uni-color-primary;
+            background-color: #dd524d;
             border-radius: 40upx;
             
             .uni-badge{
