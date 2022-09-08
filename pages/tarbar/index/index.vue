@@ -235,10 +235,10 @@
 				this.currentB = e.current
 			},
 			to_detail() {
-				/* uni.redirectTo({
+				uni.redirectTo({
 					url: "/pages/tarbar/detail/detail"
-				}) */
-				console.info(1111);
+				})
+				/* console.info(1111); */
 			},
 			
 		}

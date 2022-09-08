@@ -40,6 +40,16 @@
 			  	"navigationBarBackgroundColor": "#ffffff",
 			      "enablePullDownRefresh": false
 			  }
+		},
+		{
+		      "path": "pages/tarbar/detail/detail",
+			  "style" :
+			  {
+			      "navigationBarTitleText": "switch",
+			  	"navigationBarTextStyle": "black",
+			  	"navigationBarBackgroundColor": "#ffffff",
+			      "enablePullDownRefresh": false
+			  }
 		}
     ],
 	"globalStyle": {
