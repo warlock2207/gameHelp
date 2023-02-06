@@ -1,13 +1,18 @@
 <template>
 	<view>
-	<v-tabs v-model="current" :tabs="tabs" @change="changeTab" activeColor="#ffffff" pills=true pillsColor="#d81e06"
+	<v-tabs v-model="current" :tabs="tabs"  activeColor="#000000" pills:true pillsColor="#d81e06"
 		pillsBorderRadius="50rpx">
 	</v-tabs>
 		<view><carousel :img-list="imgList" url-key="url" @selected="selectedBanner"/></view>
 		  <view class="example-body">
 				<view class="box" style="left: 16upx;">
 					<text>泰拉瑞亚</text>
-					<text >trrair</text>
+					<view class="box" >
+						<text >trrair</text>
+					</view>
+					<view class="box" >
+						<text >2018-11-06/325M</text>
+					</view>
 				</view>
 				<view class="box_right">
 					 <image class="grade" src="/static/icon/hexagon.png"></image>
@@ -32,13 +37,13 @@
 				                    url: 'https://img1.baidu.com/it/u=4025108024,502327549&fm=253&fmt=auto&app=138&f=JPEG?w=825&h=500',
 				                    id: 1
 				                },{
-				                    url: 'https://img1.baidu.com/it/u=4025108024,502327549&fm=253&fmt=auto&app=138&f=JPEG?w=825&h=500',
+				                    url: 'https://img0.baidu.com/it/u=4084545642,29127534&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
 				                    id: 2
 				                },{
-				                    url: 'https://img1.baidu.com/it/u=4025108024,502327549&fm=253&fmt=auto&app=138&f=JPEG?w=825&h=500',
+				                    url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.gamersky.com%2Fupimg%2Fpic%2F2021%2F02%2F18%2Fsmall_202102180606184538.jpg&refer=http%3A%2F%2Fimg1.gamersky.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662701915&t=dbdc33cd9ae11d5fe011b40bf68dfe0c',
 				                    id: 3
 				                },{
-				                    url: 'https://img1.baidu.com/it/u=4025108024,502327549&fm=253&fmt=auto&app=138&f=JPEG?w=825&h=500',
+				                    url: 'http://mms0.baidu.com/it/u=2284267172,355355407&fm=253&app=138&f=PNG?w=616&h=384',
 				                    id: 4
 				                },]
 				}
@@ -76,15 +81,15 @@
 	}
 	.box_right .number {
 	            position: absolute;
-	            left: 84%;
+	            left: 75%;
 	            //top: -12px;
 	            //background-color: red;
 	            color: #fff;
 	            line-height: 28px;
 	            width: 23px;
-	            border-radius: 24px;
+	            border-radius: 12px;
 	            text-align: center;
-	            font-size: 17px;
+	            font-size: 16px;
 	        }
 	.uni-text {
 		font-size: 14px;
