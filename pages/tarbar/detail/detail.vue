@@ -5,14 +5,15 @@
 	</v-tabs>
 		<view><carousel :img-list="imgList" url-key="url" @selected="selectedBanner"/></view>
 		  <view class="example-body">
-				<view class="box" style="left: 16upx;">
-					<text>泰拉瑞亚</text>
-					<view class="box" >
-						<text >trrair</text>
-					</view>
-					<view class="box" >
-						<text >2018-11-06/325M</text>
-					</view>
+			  <view>
+			  	<text> <font style="font-size:45rpx;font-family:'黑体';font-weight: bold;">泰拉瑞亚</font> </text>
+			  </view>
+			  <view>
+			  	trrair
+			  </view>
+			  	<view class="ktetx"><font style="color: #ff0000;font-size:20rpx;align-items:center">游戏</font>
+			  	<font style="color: #797979;">2018-11-06/325M</font>
+			  	</text>
 				</view>
 				<view class="box_right">
 					 <image class="grade" src="/static/icon/hexagon.png"></image>
@@ -63,33 +64,36 @@
 	.example-body {
 		/* #ifndef APP-NVUE */
 		/* #endif */
-		padding: 2px;
+		padding: 7px;
 		left: 16upx;
 		display: inline; 
 		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 12px;
 	}
 	.box {
 		/* #ifndef APP-NVUE */
-		display: block;
+		display:flex;
 		/* #endif */
 	}
 	.box_right {
 		/* #ifndef APP-NVUE */
-		display: block;
-		margin-left: 220px;	
+		left: 85%;
+		display:flex;
 		/* #endif */
 	}
 	.box_right .number {
 	            position: absolute;
-	            left: 75%;
+	            left: 89.3%;
 	            //top: -12px;
 	            //background-color: red;
 	            color: #fff;
-	            line-height: 28px;
+	            line-height: 32px;
 	            width: 23px;
 	            border-radius: 12px;
 	            text-align: center;
-	            font-size: 16px;
+	            font-size: 17px;
 	        }
 	.uni-text {
 		font-size: 14px;
@@ -101,4 +105,12 @@
 		height: 35px;
 		text-align: center;
 	}
+	 .ktetx {
+	    border: 1.2px solid red;
+	     height: 15px;
+	     width: 25px;
+	    border-radius: 10px;
+		align-items:center;
+		justify-content: center;
+	 }
 </style>
