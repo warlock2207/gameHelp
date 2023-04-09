@@ -1,0 +1,348 @@
+// 轮播图 
+.Swiper-box{
+	//解决swiper轮播图圆角滑动会变成直角然后再变回圆角问题
+	//圆角加在Swiper父容器上,H5和小程序可行。nvue下不行。
+	/* #ifndef APP-NVUE */
+	border-radius: 20rpx;
+	overflow :hidden!important;
+	transform :translateY(0)!important;
+	transform :translateX(0)!important;
+	/* #endif */
+}
+.Swiper-mfw-index-box{
+	/* #ifndef APP-NVUE */
+	display: flex;
+	view {display: flex;}
+	/* #endif */
+	width: 750rpx;
+	justify-content: center;
+	align-items: center;
+	background-color: #f3f6f9;
+	margin-bottom: 20rpx;
+	.Swiper-mfw-index{
+		// 轮播图
+		width: 710rpx;
+		//background-color: #007AFF;
+		.Swiper-mfw{
+			width: 710rpx;
+			//height: 235px;//测量的马蜂窝APP首页轮播的高度
+			height: 494rpx;
+			
+			border-radius: 20rpx;
+			
+			.swiper-mfw-item{
+				width: 710rpx;
+				height: 494rpx;
+				
+				border-radius: 20rpx;
+				
+				.Image,.ImageVideo{
+					/* #ifdef APP-NVUE */
+					border-radius: 20rpx;
+					/* #endif */
+					width: 710rpx;
+					height: 494rpx;
+				}
+			}
+		}
+		// 指示器
+		.Swiper-indicator-box{
+			width: 710rpx;
+			align-items: center;
+			// Top顶部 [今日首推-盒子]
+			.Top-date-hot{
+				//background-color: #67C23A;
+				width: 650rpx;
+				padding: 20rpx 0;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				.left-date-ri{
+					height: 80rpx;
+					justify-content: center;
+					.date-ri-text{
+						color: #FFFFFF;
+						/* #ifdef APP-NVUE */
+						font-size: 54rpx;
+						/* #endif */
+						/* #ifndef APP-NVUE */
+						font-size: 56rpx;
+						/* #endif */
+						font-weight: 700;
+						//font-family: ;
+					}
+				}
+				.conter-date-nianyue{
+					margin: 0 14rpx;
+					height: 80rpx;
+					justify-content: center;
+					align-items: center;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					.left-width-bgcolor{
+						width: 10rpx;
+						/* #ifdef APP-NVUE */
+						height: 40rpx;
+						/* #endif */
+						
+						/* #ifndef APP-NVUE */
+						height: 50rpx;
+						/* #endif */
+						
+						border-radius: 5rpx;
+						background-color: #ffda02;
+						//margin: 0 14rpx;
+						margin-right: 14rpx;
+					}
+					.right-date-nianyue{
+						flex-direction: column;
+						.Top-yue-usa,.Bottom-nian,.text{
+							color: #FFFFFF;
+							/* #ifndef APP-NVUE */
+							font-size: 24rpx;
+							height: 24rpx;
+							/* #endif */
+							
+							/* #ifdef APP-NVUE */
+							font-size: 20rpx!important;
+							/* #endif */
+							font-weight: 700;
+						}
+						.Bottom-nian,.text{}
+					}
+				}
+				.right-hot-ttf{
+					height: 80rpx;
+					justify-content: center;
+					.hot-text{
+						color: #FFFFFF;
+						/* #ifdef APP-NVUE */
+						font-size: 40rpx;
+						/* #endif */
+						/* #ifndef APP-NVUE */
+						font-size: 50rpx;
+						font-family: cursive;
+						/* #endif */
+						font-weight: 700;
+					}
+					.ttf{}
+				}
+			}
+			// 底部详情
+			.Bottom-datall{
+				width: 710rpx;
+				align-items: center;
+				//background-color: #F0AD4E;
+				// 指示器 [轮播信息 -> 标题,用户,头像,所在地]
+				.Swiper-indicator-Top{
+					width: 650rpx;
+					padding: 20rpx 0;
+					//background-color: #0FAEFF;
+					.current{}
+					.Top-item{
+						width: 650rpx;
+						// 如果有视频，则显示“视频预览”
+						.Top-ImageVideo{
+							/* #ifdef APP-NVUE */
+							width: 130rpx;
+							padding: 4rpx 6rpx;
+							margin-bottom: 20rpx;
+							/* #endif */
+							
+							/* #ifndef APP-NVUE */
+							width: 150rpx;
+							padding: 2rpx 6rpx;
+							margin-bottom: 10rpx;
+							/* #endif */
+							
+							
+							background-color: #ffda02;
+							border-radius: 20rpx;
+							flex-direction: row;
+							flex-wrap: nowrap;
+							align-items: center;
+							.Icons{
+								.nvueiconfont,.app-iconfont {
+									color: #242629;
+									/* #ifdef APP-NVUE */
+									font-size: 24rpx;
+									/* #endif */
+									/* #ifndef APP-NVUE */
+									font-size: 26rpx;
+									/* #endif */
+								}
+							}
+							
+							.ImageVideo-text{
+								color: #242629;
+								/* #ifdef APP-NVUE */
+								font-size: 20rpx;
+								/* #endif */
+								/* #ifndef APP-NVUE */
+								font-size: 24rpx;
+								/* #endif */
+							}
+						}
+						
+						// 标题
+						.Top-Title{
+							width: 650rpx;
+							align-items: flex-start;
+							.title-text{
+								width: 650rpx;
+								color: #FFFFFF;
+								/* #ifdef APP-NVUE */
+								font-size: 32rpx;
+								/* #endif */
+								/* #ifndef APP-NVUE */
+								font-size: 28rpx;
+								/* #endif */
+								font-weight: 700;
+							}
+						}
+						// 用户信息盒子
+						.Bottom-UserInfo{
+							flex-direction: row;
+							flex-wrap: nowrap;
+							margin-top: 20rpx;
+							align-items: center;
+							.UserImage-box{
+								width: 40rpx;
+								height: 40rpx;
+								border-radius: 20rpx;
+								margin-right: 20rpx;
+								.Image{
+									width: 40rpx;
+									height: 40rpx;
+									border-radius: 20rpx;
+								}
+							}
+							.textbox{
+								flex-direction: row;
+								flex-wrap: nowrap;
+								.wo-text,.UserInfo{
+									font-size: 24rpx;
+								}
+								.wo-text{
+									color: #f1f2f6;
+									margin-right: 8rpx;
+								}
+								.UserInfo{
+									color: #FFFFFF;
+									font-weight: 700;
+								}
+							}
+							.jiange-box{
+								margin: 0 8rpx;
+								.jiange-text{
+									color: #f1f2f6;
+								}
+							}
+						}
+						
+					}
+				}
+				// 指示器 [左边图片列表+右边按钮]
+				.Swiper-indicator-Bottom{
+					width: 710rpx;
+					justify-content: space-between;
+					//background-color: #1df;
+					border-radius: 20rpx;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					padding: 14rpx;
+					//background-image:linear-gradient(to bottom right,#AD18F9,#05DFC7);
+					//线性渐变
+					//background-image:linear-gradient(to bottom,#AD18F9,#05DFC7);
+					background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(101, 101, 101, 0.7));
+					// 左边[图片列表]
+					.Bottom-left-Imagelist{
+						width: 530rpx;
+						//background-color: #F368E0;
+						flex-direction: row;
+						flex-wrap: nowrap;
+						justify-content: space-between;
+						// 指示图(小图模式)
+						.Bottom-item{
+							width: 98rpx;
+							height: 78rpx;
+							border-radius: 14rpx;
+							.Image{
+								width: 98rpx;
+								height: 78rpx;
+								border-radius: 14rpx;
+							}
+						}
+						.current{
+							//border: 4rpx solid #ffda02;
+							.Image{
+								/* #ifndef APP-NVUE */
+								border: 4rpx solid #ffda02;
+								/* #endif */
+								
+								/* #ifdef APP-NVUE || MP */
+								border: 6rpx solid #ffda02;
+								/* #endif */
+								
+							}
+						}
+					}
+					// 右边 [历历在目-按钮]
+					.Bottom-right-lili-btn{
+						width: 145rpx;
+						//background-color: #DD524D;
+						align-items: center;
+						justify-content: center;
+						border-radius: 10rpx;
+						//background-image:linear-gradient(to bottom right,#AD18F9,#05DFC7);
+						//线性渐变
+						background-image: linear-gradient(to bottom right, rgba(249, 24, 24, 0.65), rgba(220, 5, 223, 0.65));
+						//background-image:linear-gradient(to bottom,#AD18F9,#05DFC7);
+						//background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(101, 101, 101, 0.7));
+						// 历历在目
+						.Bottom-item{
+							width: 145rpx;
+							flex-direction: row;
+							flex-wrap: nowrap;
+							align-items: center;
+							justify-content: center;
+							.indicator-text{
+								color: #ffda02;
+								font-size: 24rpx;
+								font-weight: 700;
+							}
+							.Icons{
+								.nvueiconfont,.app-iconfont{
+									color: #ffda02;
+									font-size: 28rpx;
+								}
+							}
+						}
+					}
+					
+				}
+			}
+		}	
+	}
+}
+
+.Swiper-mfw-index{}
+.Swiper-mfw{
+	position: relative;
+}
+.indicator-Top-box{
+	position: absolute;
+	// 定位到顶部
+}
+.indicator-Btoom-box{
+	position: absolute;
+	bottom: 0;
+	// 定位到底部
+}
+
+
+
+
+
+
+
+
