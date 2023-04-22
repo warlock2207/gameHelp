@@ -7,10 +7,8 @@
 			</view>
 		</uni-nav-bar>
 	
-		<v-tabs v-model="current" :tabs="tabs" @change="changeTab" activeColor="#ffffff" pills=true pillsColor="#d81e06"
+		<v-tabs v-model="current" :tabs="tabs" @change="changeTab" activeColor="#ffffff" :pills=true pillsColor="#d81e06"
 			pillsBorderRadius="50rpx"></v-tabs>
-		
-				<uni-waterfall>
 					<!-- Swiper-mfw轮播图带视频 [仿马蜂窝APP首页轮播图] -->
 					<FatFatMeng-Swiper-mfw
 					:list="bannerList"
@@ -18,8 +16,6 @@
 					:autoplay="false"
 					@change="change"
 					></FatFatMeng-Swiper-mfw>
-				</uni-waterfall>
-			
 		<sl-filter :themeColor="themeColor" :menuList="menuList" @result="result"></sl-filter>
 		<view class="uni-list" style="margin-bottom: 32upx;">
 					<block v-for="(item, index) in data" :key="index">
@@ -40,7 +36,7 @@
 	import slFilter from '@/components/songlazy-sl-filter/sl-filter/sl-filter.vue';
 	import specialBanner from '@/components/EtherealWheat-banner/specialBanner.vue';
 	import listGood from '@/components/wlp-list-good/wlp-list-good.vue';
-	
+	import uni_waterfall from '@/uni_modules/FatFatMeng-Swiper-mfw/components/FatFatMeng-Swiper-mfw/FatFatMeng-Swiper-mfw.vue'
 	import {Swiper_mfw_index_data} from '@/uni_modules/FatFatMeng-Swiper-mfw/components/FatFatMeng-Swiper-mfw/index.js'
 	export default {
 		data() {
@@ -223,7 +219,8 @@
 		components: {
 			slFilter,
 			specialBanner,
-			listGood
+			listGood,
+			uni_waterfall
 		},
 		methods: {
 			search() {
@@ -240,6 +237,9 @@
 				})
 				/* console.info(1111); */
 			},
+			changeTab(){
+				//tab切换调用方法
+			}
 			
 		}
 	}
