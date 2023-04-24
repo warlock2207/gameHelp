@@ -62,12 +62,12 @@
 						<view class="right-date-nianyue">
 							<!-- 顶部 月份 [英文显示] -->
 							<text class="Top-yue-usa text">AUG</text>
-							<text class="Bottom-nian text">2021</text>
+							<text class="Bottom-nian text">2023</text>
 						</view>
 					</view>
 					<!-- 右边盒子 - 今日首推 -->
 					<view class="right-hot-ttf">
-						<text class="text hot-text app-ttf">热门</text>
+						<text class="text hot-text app-ttf">热门游戏</text>
 					</view>
 				</view>
 			</view>
